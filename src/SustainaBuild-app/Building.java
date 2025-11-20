@@ -1,5 +1,3 @@
-// Building.java
-// abstract base class and its subclasses for different types of buildings
 
 // abstract class (abstraction)
 public abstract class Building {
@@ -56,7 +54,7 @@ class Factory extends Building {
 // 🏠 house — adds population and mild happiness, small pollution
 class House extends Building {
     public House() {
-        super("House", 15, 5, 3, 10);
+        super("House", 15, 5, 5, 10);
     }
 
     @Override
@@ -79,23 +77,10 @@ class Tree extends Building {
     }
 }
 
-// 🏫 school — increases happiness and population, minor pollution
-class School extends Building {
-    public School() {
-        super("School", 10, 15, 5, 12);
-    }
-
-    @Override
-    public void build() {
-        System.out.println("🏫 A new School was constructed! Children are learning happily.");
-        System.out.println("📊 +10 Population | +15 Happiness | +5 Pollution | -12 Space\n");
-    }
-}
-
 // 🏥 hospital — improves happiness, small pollution
 class Hospital extends Building {
     public Hospital() {
-        super("Hospital", 8, 20, 4, 14);
+        super("Hospital", 8, 20, 8, 14);
     }
 
     @Override
@@ -104,7 +89,6 @@ class Hospital extends Building {
         System.out.println("📊 +8 Population | +20 Happiness | +4 Pollution | -14 Space\n");
     }
 }
-
 // 🏢 market — moderate population and happiness, minor pollution
 class Market extends Building {
     public Market() {
@@ -118,10 +102,11 @@ class Market extends Building {
     }
 }
 
+
 // 🎢 theme park — big happiness, some pollution, large space
 class ThemePark extends Building {
     public ThemePark() {
-        super("Theme Park", 5, 25, 10, 20);
+        super("Theme Park", 5, 25, 20, 20);
     }
 
     @Override
