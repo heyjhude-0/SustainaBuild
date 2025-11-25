@@ -35,9 +35,9 @@ public class CityManager {
 
     public void addBuilding(Building b) throws InvalidConstructionException {
        if (availableSpace < b.getSpaceRequired()) {
-            throw new InvalidConstructionException("Not enough space left to build a " + b.getName() + "!");
+            throw new InvalidConstructionException("\nNot enough space left to build a " + b.getName() + "!");
         }
-        if (!buildings.isEmpty() && !isCityStable()){
+        if (buildings.size() >= 3 && !isCityStable()){
             throw new InvalidConstructionException("City is unstable! You can't build more.");
         }
 
@@ -53,27 +53,43 @@ public class CityManager {
 
     }
 
-    private void updateEcoScore(){
-        int score = totalHappiness - totalPollution  + (availableSpace / 2);
+private void updateEcoScore() {
 
-        if (score > 100) score = 100;
-        if (score < 0) score = 0;
+    int score = totalHappiness - totalPollution + (availableSpace / 2);
 
-        ecoScore = score;
+   
+    if (totalPollution > 30) {        
+        score -= (totalPollution - 10) / 2;
     }
+
+    if (totalPopulation < 50) {
+        score -= (50 - totalPopulation);  
+    }
+
+
+    else if (totalPopulation > 150) {
+        score -= (totalPopulation - 150) / 4;
+    }
+    
+    if (score > 100) score = 100;
+    if (score < 0) score = 0;
+
+    ecoScore = score;
+}
 
     
     void showCityStats(){
-        System.out.println("\nYour City Status: " );
-        System.out.print("Current buildings: ");
+
+        System.out.println("\n📊  Your City Status: " );
+        System.out.print("\t🏢  Current buildings: ");
         for (Building bld: buildings){
             System.out.print(bld.getName() + ", ");
         }
-        System.out.println("\nCurrent Population: " + getTotalPopulation());
-        System.out.println("Current Happiness: " + getTotalHappiness());
-        System.out.println("Current Pollution: " + getTotalPollution());
-        System.out.println("Remaining Space: " + getAvailableSpace());
-        System.out.println("Eco Score: " + getEcoScore());
+        System.out.println("\n\t👨  Current Population: " + getTotalPopulation());
+        System.out.println("\t😄  Current Happiness: " + getTotalHappiness());
+        System.out.println("\t🌫  Current Pollution: " + getTotalPollution());
+        System.out.println("\t🕳  Remaining Space: " + getAvailableSpace());
+        System.out.println("\t☘  Eco Score: " + getEcoScore());
 
 
     }
@@ -87,10 +103,10 @@ public class CityManager {
     }
 
     public String getCityRating() {
-    if (ecoScore >= 80) return "🌿 Excellent!";
-    if (ecoScore >= 60) return "😊 Good job!";
-    if (ecoScore >= 30) return "😐 City is stable but could improve.";
-    return "💀 City collapsed due to instability!";
+    if (ecoScore >= 80) return "🌿  Excellent!";
+    if (ecoScore >= 60) return "😊  Good job!";
+    if (ecoScore >= 30) return "😐  City is stable but could improve.";
+    return "💀   City collapsed due to instability!";
 }
 
 

@@ -41,64 +41,64 @@ public abstract class Building {
 // 🏭 factory — boosts population but pollutes the city
 class Factory extends Building {
     public Factory() {
-        super("Factory", 30, -5, 25, 15);
+        super("🏭  Factory", 25, -10, 25, 15);
     }
 
     @Override
     public void build() {
-        System.out.println("🏭 A Factory has been built! It boosts your economy but fills the air with smoke...");
-        System.out.println("📊 +30 Population | -5 Happiness | +25 Pollution | -15 Space\n");
+        System.out.println("🏭    A Factory has been built! It boosts your economy but fills the air with smoke...");
+        System.out.println("📊    +25 Population | -10 Happiness | +25 Pollution | -15 Space\n");
     }
 }
 
 // 🏠 house — adds population and mild happiness, small pollution
 class House extends Building {
     public House() {
-        super("House", 15, 5, 5, 10);
+        super("🏠  House", 15, 6, 5, 10);
     }
 
     @Override
     public void build() {
-        System.out.println("🏠 You built a cozy House! Families are moving in happily.");
-        System.out.println("📊 +15 Population | +5 Happiness | +3 Pollution | -10 Space\n");
+        System.out.println("🏠    You built a cozy House! Families are moving in happily.");
+        System.out.println("📊    +15 Population | +6 Happiness | +8 Pollution | -10 Space\n");
     }
 }
 
 // 🌳 tree — reduces pollution, small space used
 class Tree extends Building {
     public Tree() {
-        super("Tree", 0, 4, -8, 3);
+        super("🌳  Tree", 0, 2, -6, 3);
     }
 
     @Override
     public void build() {
-        System.out.println("🌳 You planted Trees! The city air feels cleaner and fresher.");
-        System.out.println("📊 +0 Population | +4 Happiness | -8 Pollution | -3 Space\n");
+        System.out.println("🌳    You planted Trees! The city air feels cleaner and fresher.");
+        System.out.println("📊    +0 Population | +1 Happiness | -3 Pollution | -3 Space\n");
     }
 }
 
 // 🏥 hospital — improves happiness, small pollution
 class Hospital extends Building {
     public Hospital() {
-        super("Hospital", 8, 20, 8, 14);
+        super("🏥  Hospital", 10, 15, 15, 14);
     }
 
     @Override
     public void build() {
-        System.out.println("🏥 A Hospital is now serving the people! Everyone feels safer and cared for.");
-        System.out.println("📊 +8 Population | +20 Happiness | +4 Pollution | -14 Space\n");
+        System.out.println("🏥    A Hospital is now serving the people! Everyone feels safer and cared for.");
+        System.out.println("📊    +10 Population | +15 Happiness | +15 Pollution | -14 Space\n");
     }
 }
 // 🏢 market — moderate population and happiness, minor pollution
 class Market extends Building {
     public Market() {
-        super("Market", 12, 10, 6, 10);
+        super("🏢  Market", 12, 8, 10, 10);
     }
 
     @Override
     public void build() {
-        System.out.println("🏢 A lively Market opened! People are busy shopping and selling goods.");
-        System.out.println("📊 +12 Population | +10 Happiness | +6 Pollution | -10 Space\n");
+        System.out.println("🏢    A lively Market opened! People are busy shopping and selling goods.");
+        System.out.println("📊    +12 Population | +8 Happiness | +10 Pollution | -10 Space\n");
     }
 }
 
@@ -106,13 +106,13 @@ class Market extends Building {
 // 🎢 theme park — big happiness, some pollution, large space
 class ThemePark extends Building {
     public ThemePark() {
-        super("Theme Park", 5, 25, 20, 20);
+        super("🎢  Theme Park", 5, 25, 20, 20);
     }
 
     @Override
     public void build() {
-        System.out.println("🎢 A Theme Park is built! Everyone’s having fun and laughter fills the air!");
-        System.out.println("📊 +5 Population | +25 Happiness | +10 Pollution | -20 Space\n");
+        System.out.println("🎢    A Theme Park is built! Everyone’s having fun and laughter fills the air!");
+        System.out.println("📊    +5 Population | +25 Happiness | +20 Pollution | -20 Space\n");
     }
 }
 
