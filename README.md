@@ -1,7 +1,5 @@
 # SustainaBuild — Sustainable City Console Simulator
 
----
-
 ## Description / Overview
 **SustainaBuild** is a Java console-based city simulation game where you play as a _sustainable urban planner_.
 
@@ -19,8 +17,6 @@ Each building affects the city differently. For example:
 
 The game ends if the city **runs out of space** or **pollution hits 100%**.
 
----
-
 ## OOP Concepts Applied
 
 ### 🔹 **Abstraction**
@@ -35,8 +31,6 @@ Concrete buildings such as `Factory`, `House`, `Park`, `Tree`, `Hospital`, and `
 
 ### 🔹 **Polymorphism**
 Each building overrides `build()`, and at runtime the correct implementation executes depending on the building type.
-
----
 
 ## Program Structure
 
@@ -54,5 +48,3 @@ src/
       ├── Hospital.java
       ├── Market.java
       └── ThemePark.java
-
----
