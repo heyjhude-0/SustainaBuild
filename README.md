@@ -2,40 +2,93 @@
 
 ---
 
-## 1. Project Title
-**SustainaBuild — Sustainable City Console Simulator**
+## Description / Overview
+**SustainaBuild** is a Java console-based city simulation game where you play as a _sustainable urban planner_.
+
+Your goal: grow a thriving city while balancing:
+- 👥 **Population**
+- 😊 **Happiness**
+- 🌫️ **Pollution**
+- 🏙️ **Available Space**
+
+Each building affects the city differently. For example:
+- 🏭 **Factory** → +Population, +Pollution  
+- 🌳 **Park / Tree** → +Happiness, –Pollution  
+- 🏠 **House** → +Population, small space cost  
+- 🎢 **ThemePark** → +Happiness, high space cost  
+
+The game ends if the city **runs out of space** or **pollution hits 100%**.
 
 ---
 
-## 2. Description / Overview
-**SustainaBuild** is a Java console-based simulation game where the player acts as a city planner (imagine Batangas City). The goal is to build and expand the city while balancing **population**, **happiness**, **pollution**, and **available space**. Each building has trade-offs (e.g., a Factory increases population but raises pollution; a Park reduces pollution but uses space). The player continues building until the city runs out of space or pollution reaches a critical level (100%).
+## OOP Concepts Applied
+
+### 🔹 **Abstraction**
+`Building` is an abstract class defining shared attributes (name, pollutionImpact, etc.) and the abstract method `build()`.
+
+### 🔹 **Encapsulation**
+All fields in `Building` and `CityManager` are `private`.  
+Only getters/setters expose data safely.
+
+### 🔹 **Inheritance**
+Concrete buildings such as `Factory`, `House`, `Park`, `Tree`, `Hospital`, and `Market` all extend `Building`.
+
+### 🔹 **Polymorphism**
+Each building overrides `build()`, and at runtime the correct implementation executes depending on the building type.
 
 ---
 
-## 3. OOP Concepts Applied
+## Program Structure
 
-### Abstraction
-The project uses an abstract base class `Building` that defines the core attributes all buildings share: `name`, `populationImpact`, `happinessImpact`, `pollutionImpact`, and `spaceRequired`. This class also declares an abstract method `build()` that every concrete building must implement.
-
-### Encapsulation
-All building attributes are declared `private` and accessed via **getters** and **setters**. This prevents direct modification of internal fields and allows controlled access from other classes (for example, `CityManager` reads effects using getters).
-
-### Inheritance
-Concrete building types such as `Factory`, `House`, `Hospital`, `Market`, `ThemePark`, `Park`, and `Tree` **extend** the `Building` class. They inherit attributes and behavior from the base class and only specify their unique values and messages.
-
-### Polymorphism
-Each subclass **overrides** the `build()` method to provide a different behavior/message when constructed. The rest of the program treats all building objects as type `Building`, but at runtime each one executes its own `build()` implementation.
+### 📁 **Folder Layout**
+```text
+src/
+ ├── Main.java
+ ├── CityManager.java
+ ├── Building.java
+ └── buildings/
+      ├── Factory.java
+      ├── House.java
+      ├── Park.java
+      ├── Tree.java
+      ├── Hospital.java
+      ├── Market.java
+      └── ThemePark.java
 
 ---
 
-## 4. Program Structure
+## **How to Run the Program**
 
-### Main classes and responsibilities
-- **`Building.java`**  
-  Abstract base class. Defines attributes and the abstract `build()` method. Implements getters and setters. Concrete building subclasses (Factory, House, Tree, Hospital, Market, ThemePark, Park) provide specific effects and override `build()`.
 
-- **`CityManager.java`**  
-  Handles game logic and holds city status: `totalPopulation`, `totalHappiness`, `totalPollution`, `availableSpace`, and optionally `ecoScore`. Implements `addBuilding(Building b)`, `showCityStatus()`, and `isGameOver()` or `updateEcoScore()`. Performs checks (space limit, pollution limit) and throws or returns errors when an action is invalid.
 
-- **`Main.java`**  
-  Game loop and user interface (console). Displays intro and menu, reads user input, creates building objects based on user choice, calls `build()` for immediate feedback, and forwards the building to `CityManager` to update totals. Handles input errors with try-catch and ends the game on exit or failure conditions.
+
+
+
+---
+
+## **Sample Output**
+
+
+
+
+
+
+
+---
+
+## **Author and Acknowledgement**
+
+### **Authors**
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+| Paragraph | Text |
+| Paragraph | Text |
+
+### **Acknowledgement**
+We would like to sincerely express our gratitude to our *Instructor in Object-Oriented Programming*, **Ms. Fatima Marie Agdon**, for her guidance and for sharing her knowledge of **Object-Oriented Programming** (OOP) concepts and best practices. We also extend our appreciation to our team members for their cooperation, dedication and effort to complete this activity. 
+
+---
+
+## **Other Sections you may include:**
