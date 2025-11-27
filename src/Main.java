@@ -1,7 +1,7 @@
 import java.util.Scanner;
-//import buildings.CityManager;
+
 import buildings.*;
-//import buildings.InvalidConstructionException;
+
 
 class Main{
     

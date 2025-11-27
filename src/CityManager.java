@@ -1,14 +1,15 @@
 import buildings.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class CityManager {
-    int totalPopulation = 0;
-    int totalHappiness = 50;
-    int totalPollution = 0;
-    int availableSpace = 100; 
-    int ecoScore = 0;
-    public List<Building> buildings = new ArrayList<>();
+    private int totalPopulation = 0;
+    private int totalHappiness = 50;
+    private int totalPollution = 0;
+    private int availableSpace = 100; 
+    private int ecoScore = 0;
+    private final List<Building> buildings = new ArrayList<>();
 
     public int getTotalPopulation(){ return totalPopulation;}
     public void setTotalPopulation(int totalPopulation){
@@ -29,7 +30,7 @@ public class CityManager {
     public void setAvailableSpace(int availableSpace){
         this.availableSpace= availableSpace;
     }
-    public List<Building> getBuildings() { return buildings; }
+    public List<Building> getBuildings() { return Collections.unmodifiableList(buildings); }
     public int getEcoScore(){ return ecoScore;}
 
 
