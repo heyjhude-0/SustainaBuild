@@ -44,7 +44,7 @@ public class CityManager {
         for (Building x : buildings) if (x.getName().contains("Tree") || x.getName().contains("🌳")) treeCount++;
         if (b instanceof Tree || b.getName().contains("Tree") || b.getName().contains("🌳")) {
             if (treeCount >= maxTrees) {
-                throw new InvalidConstructionException("You  spam more trees here (max " + maxTrees + ").");
+                throw new InvalidConstructionException("You can't add/spam more trees here (max " + maxTrees + ").");
             }
         }
         buildings.add(b);
@@ -63,7 +63,7 @@ private void updateEcoScore() {
 
     int score = totalHappiness - totalPollution + (availableSpace / 2);
 
-    //pollution capped
+    //pollution cap
     if (totalPollution < -30){
         totalPollution = -30;
     }
@@ -105,7 +105,7 @@ private void updateEcoScore() {
     }
     
     public boolean isCityStable() {
-        return ecoScore >= 30;
+        return ecoScore >= 25;
     }
 
     public boolean isSpaceLeft() {
@@ -113,12 +113,12 @@ private void updateEcoScore() {
     }
 
     public String getCityRating() {
-    if (ecoScore >= 80) return "🌿  Excellent!";
-    if (ecoScore >= 60) return "😊  Good job!";
-    if (ecoScore >= 40) return "😐  City is stable but could improve.";
-    if (ecoScore >= 25) return "😢  City is struggling.";
-    return "💀   City collapsed due to instability!";
-}
+        if (ecoScore >= 80) return "🌿  Excellent!";
+        if (ecoScore >= 60) return "😊  Good job!";
+        if (ecoScore >= 40) return "😐  City is stable but could improve.";
+        if (ecoScore >= 25) return "😢  City is struggling.";
+        return "💀   City collapsed due to instability!";
+    }
 
 
 }

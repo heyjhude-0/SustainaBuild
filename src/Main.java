@@ -48,18 +48,13 @@ class Main{
             
             
 }
-   
-    public static void showMainMenu(){
-        
-    }
-
 
     public static void startGame(Scanner sc){
         CityManager city = new CityManager();
         clearScreen();
         System.out.println("🎮   GAME START");
+
         while (true){
-            
             
             System.out.println("\n🏦🏦  Choose building to create: 🏦🏦\n");
             System.out.println("1. 🏭  Factory \t\t2. 🏠  House");
@@ -121,7 +116,7 @@ class Main{
                 }
 
             if (!city.isSpaceLeft()){
-                    System.out.println("🏨 All space are occupied. Let's see how well you did.");
+                    System.out.println("🏨  All space are occupied. Let's see how well you did.");
                     endGame(city, sc);
                     break;
                 }
@@ -167,7 +162,7 @@ class Main{
     private static void showCredits(Scanner sc) {
         clearScreen();
         System.out.println("📃  CREDITS:");
-        System.out.println("\n- Developer: Jhude Dagle, Faith Gonzales, Nhealeen Hernandez");
+        System.out.println("\n- Developers: Jhude Dagle, Faith Gonzales, Nhealeen Hernandez");
         System.out.println("- Language: Java");
         System.out.println("- Special thanks: Ma'am Fatima Agdon");
         System.out.println("\nPress Enter to return to Main Menu.");
