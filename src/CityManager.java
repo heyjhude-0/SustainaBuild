@@ -40,7 +40,7 @@ public class CityManager {
             throw new InvalidConstructionException("\nNot enough space left to build a " + b.getName() + "!");
         }
      
-        int maxTrees = 15; 
+        int maxTrees = 10; 
         int treeCount = 0;
         for (Building x : buildings) if (x.getName().contains("Tree") || x.getName().contains("🌳")) treeCount++;
         if (b instanceof Tree || b.getName().contains("Tree") || b.getName().contains("🌳")) {
@@ -62,19 +62,19 @@ public class CityManager {
 
 private void updateEcoScore() {
 
-    int score = totalHappiness - totalPollution + (availableSpace / 2);
+    int score = totalHappiness - totalPollution + (availableSpace / 4);
 
     //pollution cap
-    if (totalPollution < -30){
-        totalPollution = -30;
+    if (totalPollution < 0){
+        totalPollution = 0;
     }
 
     if (totalPollution > 30) {        
         score -= (totalPollution - 30) / 2;
     }
 
-    if (totalPopulation < 50) {
-        score -= (50 - totalPopulation);  
+    if (totalPopulation < 40) {
+        score -= (40 - totalPopulation);  
     }
 
 

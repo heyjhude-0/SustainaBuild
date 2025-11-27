@@ -47,9 +47,9 @@ public abstract class Building {
 
 // 🌳 tree — reduces pollution, small space used
 
-// 🏥 hospital — improves happiness, small pollution
+// 🏥 hospital — improves happiness, some pollution
 
-// 🏢 market — moderate population and happiness, minor pollution
+// 🏢 market — moderate population and happiness, some pollution
 
 
 // 🎢 theme park — big happiness, some pollution, large space

@@ -151,7 +151,7 @@ class Main{
         System.out.println("❓  HOW TO PLAY:");
         System.out.println("\n- Build and manage your city.");
         System.out.println("- Balance population, happiness, and pollution.");
-        System.out.println("- Avoid spamming trees or overbuilding.");
+        System.out.println("- Avoid spamming trees [limit of 10] or overbuilding.");
         System.out.println("- Keep ecoScore high to maintain city stability.");
         System.out.println("\nPress Enter to return to Main Menu.");
         sc.nextLine();
