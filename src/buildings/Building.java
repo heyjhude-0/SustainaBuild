@@ -35,22 +35,4 @@ public abstract class Building {
     public abstract void build();
 }
 
-//////////////////////////////////////////////////////////////
-// subclasses (inheritance + polymorphism)
-//////////////////////////////////////////////////////////////
-
-// 🏭 factory — boosts population but pollutes the city
-
-
-// 🏠 house — adds population and mild happiness, small pollution
-
-
-// 🌳 tree — reduces pollution, small space used
-
-// 🏥 hospital — improves happiness, some pollution
-
-// 🏢 market — moderate population and happiness, some pollution
-
-
-// 🎢 theme park — big happiness, some pollution, large space
 
