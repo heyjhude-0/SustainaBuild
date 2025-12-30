@@ -10,7 +10,7 @@ class Main{
        while (true) {
                 System.out.println();
                 System.out.println("╔----------------------------------------------------------------------------------╗");
-                System.out.println("|                        WELCOME TO SUSTAINABUILD!👋                                |");
+                System.out.println("|                        WELCOME TO SUSTAINABUILD!!👋                                |");
                 System.out.println("|----------------------------------------------------------------------------------|");
                 System.out.println("|           🏦  Choose, and construct buildings and take up available space.        |");
                 System.out.println("|                   🌲  Balance progress and sustainability.                        |");
